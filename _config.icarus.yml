@@ -165,9 +165,12 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: disqus
+    type: valine
+    app_id: 2SjDk6tWoZ8Fjlc7ZBIVeNQ1-gzGzoHsz
+    app_key: HDPApOrQy9Q9Gc4FRwmctpmn
+    placeholder: "欢迎探讨交流..."
     # Disqus shortname
-    shortname: ''
+    # shortname: ''
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 # donates:
