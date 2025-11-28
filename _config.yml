@@ -1,10 +1,10 @@
-title: Hexo
+title: Wang Haotian's Blog
 subtitle: ''
 description: ''
 keywords: null
-author: John Doe
-language: en
-timezone: ''
+author: Wang Haotian
+language: zh-CN
+timezone: 'Asia/Shanghai'
 url: http://example.com
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
@@ -60,4 +60,6 @@ exclude: null
 ignore: null
 theme: icarus
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:WHT0909/WHT_blog.git
+  branch: main
