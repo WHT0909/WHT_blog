@@ -250,6 +250,9 @@ widgets:
             Github:
                 icon: fab fa-github
                 url: https://github.com/WHT0909
+            ORCID:
+                icon: fab fa-orcid
+                url: https://orcid.org/0009-0000-7335-6567
             # Facebook:
             #     icon: fab fa-facebook
             #     url: https://facebook.com
