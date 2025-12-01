@@ -253,6 +253,9 @@ widgets:
             ORCID:
                 icon: fab fa-orcid
                 url: https://orcid.org/0009-0000-7335-6567
+            Google Scholar:
+                icon: fas fa-user-graduate
+                url: https://scholar.google.com/citations?hl=zh-CN&user=fBdhxEwAAAAJ
             # Facebook:
             #     icon: fab fa-facebook
             #     url: https://facebook.com
