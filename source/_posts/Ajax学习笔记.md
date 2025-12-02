@@ -146,7 +146,7 @@ createApp({
             this.empList = result.data.data
         }
     }
-}).mounted("#container")
+}).mount("#container")
 ```
 
 <h1>4. Vue 的生命周期/钩子方法</h1>
@@ -212,7 +212,7 @@ createApp({
     mounted(){
         this.search()
     }
-}).mounted("#container")
+}).mount("#container")
 ```
 
 注意：`mounted`方法要和`data`，`methods`在同一级别
