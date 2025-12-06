@@ -18,7 +18,15 @@ categories:
     }
 </style>
 
-<h1>1. Ajax 简介</h1>
+<div class="catalog">
+    <h3>目录</h3>
+    <a href="#chapter1">1. Ajax 简介</a><br>
+    <a href="#chapter2">2. Ajax 请求案例</a><br>
+    <a href="#chapter3">3. 异步变同步：async & await</a><br>
+    <a href="#chapter4">4. Vue 的生命周期/钩子方法</a><br>
+</div>
+
+<h1 id="chapter1">1. Ajax 简介</h1>
 
 Ajax 是一种<strong>异步</strong>通信方式，能够与服务器端交换数据
 
@@ -85,7 +93,7 @@ axios.post('https://mock.apifox.cn/m1/3083103-0-default/emps/update', 'id=1').th
 
 注：`then().catch()` 部分可简写为`thenc`，Vscode会自动弹出
 
-<h1>2. Ajax 请求案例</h1>
+<h1 id="chapter2">2. Ajax 请求案例</h1>
 
 ```JavaScript
 <script type="module">
@@ -131,7 +139,7 @@ axios.post('https://mock.apifox.cn/m1/3083103-0-default/emps/update', 'id=1').th
 
 而我们要获取的是其中的 data 字段，因此将当前实例下的 empList 赋值为 result.data.data
 
-<h1>3. 异步变同步：async & await</h1>
+<h1 id="chapter3">3. 异步变同步：async & await</h1>
 
 `aysnc`和`await`能够让异步操作变为同步操作，让代码从上到下按顺序执行，增强代码的可维护性
 
@@ -149,7 +157,7 @@ createApp({
 }).mount("#container")
 ```
 
-<h1>4. Vue 的生命周期/钩子方法</h1>
+<h1 id="chapter4">4. Vue 的生命周期/钩子方法</h1>
 
 Vue 有八个生命周期，如下表所示
 

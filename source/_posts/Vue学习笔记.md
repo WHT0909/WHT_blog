@@ -12,7 +12,18 @@ categories:
 黑马程序员网课 Vue 学习笔记
 <!-- more -->
 
-<h1>1. 定义应用实例</h1>
+<div class="catalog">
+    <h3>目录</h3>
+    <a href="#chapter1">1. 定义应用实例</a><br>
+    <a href="#chapter2">2. Vue 常用指令</a><br>
+    <a href="#chapter2.1" style="margin-left: 2em;">2.1 v-for</a><br>
+    <a href="#chapter2.2" style="margin-left: 2em;">2.2 v-bind</a><br>
+    <a href="#chapter2.3" style="margin-left: 2em;">2.3 v-if v-show</a><br>
+    <a href="#chapter2.4" style="margin-left: 2em;">2.4 v-model</a><br>
+    <a href="#chapter2.5" style="margin-left: 2em;">2.5 v-on</a><br>
+</div>
+
+<h1 id="chapter1">1. 定义应用实例</h1>
 
 ```html
 <body>
@@ -38,9 +49,9 @@ createApp 创建了一个应用实例，并通过 mount 方法将该实例挂在
 
 挂载后，#app 元素内部的内容会被 Vue 模板替换（如果有原始内容会被覆盖）
 
-<h1>2. Vue 常用指令</h1>
+<h1 id="chapter2">2. Vue 常用指令</h1>
 
-<h2>2.1 v-for</h2>
+<h2 id="chapter2.1">2.1 v-for</h2>
 
 用途：循环渲染，要渲染哪个标签就把 v-for 写在该标签里
 
@@ -102,7 +113,7 @@ Vue 实例中 data 数据对象的定义方式为：`对象名: {..}`
 
 :key 一般使用 id 作为唯一的键
 
-<h2>2.2 v-bind</h2>
+<h2 id="chapter2.2">2.2 v-bind</h2>
 
 用途：用于动态绑定资源
 
@@ -114,7 +125,7 @@ Vue 实例中 data 数据对象的定义方式为：`对象名: {..}`
 
 注意：在标签内部（如 img 标签`<img src="img1.png" alt="img1">`）使用插值表达式会报错
 
-<h2>2.3 v-if v-show</h2>
+<h2 id="chapter2.3">2.3 v-if v-show</h2>
 
 用途：都用于控制页面上元素显示与否；用`<span>`标签搭配控制元素
 
@@ -143,7 +154,7 @@ Vue 实例中 data 数据对象的定义方式为：`对象名: {..}`
 </td>
 ```
 
-<h2>2.4 v-model</h2>
+<h2 id="chapter2.4">2.4 v-model</h2>
 
 用途：双向绑定表单数据；在绑定前需要先在 data 里创建数据对象
 
@@ -166,7 +177,7 @@ createApp({
 })
 ```
 
-<h2>2.5 v-on</h2>
+<h2 id="chapter2.5">2.5 v-on</h2>
 
 用途：绑定事件；语法为`v-on:事件="方法"`，也可以简写为`@事件="方法"`
 
