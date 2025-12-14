@@ -2,7 +2,9 @@
 title: Python创建虚拟环境
 date: 2025-12-14 15:45:35
 tags:
-    - Python
+    - 环境管理
+categories:
+    - 其他计算机技术
 ---
 
 整理了 Python 创建虚拟环境的几种方法
