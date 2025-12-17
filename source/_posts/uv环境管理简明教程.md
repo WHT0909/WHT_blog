@@ -13,11 +13,12 @@ categories:
 <div class="catalog">
     <h3>目录</h3>
     <a href="#chapter1">1. 初始化项目</a><br>
-    <a href="#chapter2">2. 创建虚拟环境并运行</a><br>
-    <a href="#chapter3">3. 复现 uv 环境</a><br>
+    <a href="#chapter2">2. 创建虚拟环境</a><br>
+    <a href="#chapter3">3. 运行程序</a><br>
+    <a href="#chapter4">4. 复现 uv 环境</a><br>
 </div><br><br>
 
-uv 是一款基于 Rust 编写的 Python 环境管理工具，本文将总结 uv 的使用方法和常用指令。uv 在 Windows 和 Linux / MacOS 系统下的安装详见笔记"Python创建虚拟环境"。本文的所有示例程序均在 Windows Subsystem for Linux 2（WSL 2）的 Ubuntu 20.04 发行版环境中运行。<br>
+uv 是一款基于 Rust 编写的 Python 环境管理工具，本文将总结 uv 的使用方法和常用指令<a href="#ref1">[1]</a>。uv 在 Windows 和 Linux / MacOS 系统下的安装详见笔记"Python创建虚拟环境"。本文的所有示例程序均在 Windows Subsystem for Linux 2（WSL 2）的 Ubuntu 20.04 发行版环境中运行。<br>
 
 <h2 id="chapter1">1. 初始化项目</h2>
 
@@ -45,7 +46,7 @@ requires-python = ">=3.9" # python 版本要求
 dependencies = [] # 依赖
 ```
 
-<h2 id="chapter2">2. 创建虚拟环境并运行</h2>
+<h2 id="chapter2">2. 创建虚拟环境</h2>
 
 通过`uv venv`指令即可创建环境。根据提示，可通过`source .venv/bin/activate`激活环境。实际上 uv 会首先查找当前项目下有无 .venv 文件夹，无需手动激活也能够正常使用。
 
@@ -55,6 +56,24 @@ Using CPython 3.9.12 interpreter at: /root/anaconda3/bin/python3
 Creating virtual environment at: .venv
 Activate with: source .venv/bin/activate
 ```
+
+通常情况下，直接使用`uv venv`创建环境会很慢。一个常用的提速方法是配置镜像源<a href="#ref2">[2]</a>：
+
+Linux / macOS：创建并编辑 /etc/uv/uv.toml 或者 $XDG_CONFIG_DIRS/uv/uv.toml
+
+Windows：创建并编辑 %SYSTEMDRIVE%\ProgramData\uv\uv.toml
+
+uv.toml内容为：`python-install-mirror = "https://registry.npmmirror.com/-/binary/python-build-standalone/"`
+
+在项目中生成的配置文件 pyproject.toml 中添加以下内容：
+
+```bash
+[tool.uv]
+python-install-mirror = "https://registry.npmmirror.com/-/binary/python-build-standalone/"
+```
+
+
+<h2 id="chapter3">3. 运行程序</h2>
 
 使用`uv run main.py`运行程序，运行时所有依赖的版本会自动更新
 
@@ -66,7 +85,7 @@ Resolved 4 packages in 782ms
 Audited 1 package in 4ms 
 ```
 
-在实际下载的过程中，和 pip 一样，如果不使用国内的镜像源直接下载，uv 将从中央仓库拉取依赖，下载速度非常之慢。配置国内源的方法有两种，一种是直接在指令后加参数（如上面的示例代码）：
+在实际下载的过程中，和 pip 一样，如果不使用国内的镜像源直接下载，uv 将从中央仓库拉取依赖，下载速度非常之慢。配置国内源的方法有两种，一种是直接在指令后加参数（如上面的示例代码）<a href="#ref3">[3]</a>：
 
 ```bash
 uv add numpy --default-index https://pypi.tuna.tsinghua.edu.cn/simple
@@ -137,7 +156,7 @@ uvtest v0.1.0
 (*) Package tree already displayed
 ```
 
-<h2 id="chapter3">3. 复现 uv 环境</h2>
+<h2 id="chapter4">4. 复现 uv 环境</h2>
 
 首先移除现有的虚拟环境：`rm -rf .venv`
 
@@ -150,5 +169,6 @@ uvtest v0.1.0
 <br><br>
 本文参考了以下资源：
 
-- <a href="https://www.bilibili.com/video/BV15MVdzaEUw/?spm_id_from=333.337.search-card.all.click&vd_source=0ea0c7956df75b2935422822b2001158">bilibili：全面掌握UV：Python下一代环境管理懒人工具（Python五分钟）</a>
-- <a href="https://zhuanlan.zhihu.com/p/1930714592423703026">知乎：别再忍了！uv 下载慢如龟速？一招配置国内镜像，让你的 Python 体验坐上火箭！</a>
+<a id="ref1" href="https://www.bilibili.com/video/BV15MVdzaEUw/?spm_id_from=333.337.search-card.all.click&vd_source=0ea0c7956df75b2935422822b2001158">[1] bilibili：全面掌握UV：Python下一代环境管理懒人工具（Python五分钟）</a><br>
+<a id="ref2" href="https://blog.csdn.net/eididjjd/article/details/150018389">[2] CSDN：uv下载python加速镜像源 uv python下载加速配置文件 全局配置 项目配置</a><br>
+<a id="ref3" href="https://zhuanlan.zhihu.com/p/1930714592423703026">[3] 知乎：别再忍了！uv 下载慢如龟速？一招配置国内镜像，让你的 Python 体验坐上火箭！</a><br>
